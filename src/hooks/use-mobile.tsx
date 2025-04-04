@@ -1,39 +1,50 @@
 
-import * as React from "react"
+import { useState, useEffect } from "react";
 
 // Breakpoints for different device types
-const MOBILE_BREAKPOINT = 768
-const SMALL_MOBILE_BREAKPOINT = 360 // Adding a smaller breakpoint for smaller Android phones
+const MOBILE_BREAKPOINT = 768;
+const SMALL_MOBILE_BREAKPOINT = 360;
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
-    const onChange = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    }
-    mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    return () => mql.removeEventListener("change", onChange)
-  }, [])
+  useEffect(() => {
+    // Define the check function
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
+    
+    // Run once on mount
+    checkMobile();
+    
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+    
+    // Clean up
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-  return !!isMobile
+  return isMobile;
 }
 
-// New hook for detecting very small mobile screens (like small Android phones)
 export function useIsSmallMobile() {
-  const [isSmallMobile, setIsSmallMobile] = React.useState<boolean | undefined>(undefined)
+  const [isSmallMobile, setIsSmallMobile] = useState<boolean>(false);
 
-  React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${SMALL_MOBILE_BREAKPOINT - 1}px)`)
-    const onChange = () => {
-      setIsSmallMobile(window.innerWidth < SMALL_MOBILE_BREAKPOINT)
-    }
-    mql.addEventListener("change", onChange)
-    setIsSmallMobile(window.innerWidth < SMALL_MOBILE_BREAKPOINT)
-    return () => mql.removeEventListener("change", onChange)
-  }, [])
+  useEffect(() => {
+    // Define the check function
+    const checkSmallMobile = () => {
+      setIsSmallMobile(window.innerWidth < SMALL_MOBILE_BREAKPOINT);
+    };
+    
+    // Run once on mount
+    checkSmallMobile();
+    
+    // Add event listener
+    window.addEventListener("resize", checkSmallMobile);
+    
+    // Clean up
+    return () => window.removeEventListener("resize", checkSmallMobile);
+  }, []);
 
-  return !!isSmallMobile
+  return isSmallMobile;
 }
