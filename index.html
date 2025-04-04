@@ -1,26 +1,520 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>connect-karmik-karmachari</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="connect-karmik-karmachari" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <title>ConnectLabour - Connecting Workers & Employers</title>
+    <meta name="description" content="Connect daily wage workers with employers across India" />
+    <meta name="author" content="ConnectLabour" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <img src="src/assets/logo.svg" alt="ConnectLabour Logo" />
+              <h1>ConnectLabour</h1>
+            </div>
+            <div class="nav-links">
+              <a href="#how-it-works" class="nav-link">How It Works</a>
+              <a href="#benefits" class="nav-link">Benefits</a>
+              <a href="#testimonials" class="nav-link">Success Stories</a>
+            </div>
+            <div class="auth-buttons">
+              <button class="btn btn-login" id="loginBtn">Login</button>
+              <button class="btn btn-register" id="registerBtn">Register</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Connecting <span class="accent">Workers</span> &
+              <span class="accent">Employers</span> Across India
+            </h1>
+            <p class="hero-subtitle">
+              Find reliable daily wage workers or get hired for jobs in your area - simple, secure, and fair.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary btn-lg" id="findWorkersBtn">
+                Find Workers
+              </button>
+              <button class="btn btn-secondary btn-lg" id="findJobsBtn">
+                Find Jobs
+              </button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="src/assets/hero-image.svg" alt="Workers and employers connecting" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>20,000+</h3>
+              <p>Workers Registered</p>
+            </div>
+            <div class="stat-card">
+              <h3>5,000+</h3>
+              <p>Employers</p>
+            </div>
+            <div class="stat-card">
+              <h3>12</h3>
+              <p>Cities Covered</p>
+            </div>
+            <div class="stat-card">
+              <h3>15,000+</h3>
+              <p>Jobs Completed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="how-it-works" id="how-it-works">
+        <div class="container">
+          <h2 class="section-title">How ConnectLabour Works</h2>
+          
+          <div class="tabs">
+            <div class="tab-header">
+              <button class="tab-btn active" data-tab="employers">For Employers</button>
+              <button class="tab-btn" data-tab="workers">For Workers</button>
+            </div>
+            
+            <div class="tab-content active" id="employers-tab">
+              <div class="steps">
+                <div class="step">
+                  <div class="step-icon">1</div>
+                  <h3>Register</h3>
+                  <p>Create your account using your mobile number and basic details</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">2</div>
+                  <h3>Post Job</h3>
+                  <p>Specify worker type, location, and payment terms</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">3</div>
+                  <h3>Connect</h3>
+                  <p>Browse workers near you and contact them directly</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">4</div>
+                  <h3>Hire</h3>
+                  <p>Finalize terms and hire workers for your job</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="workers-tab">
+              <div class="steps">
+                <div class="step">
+                  <div class="step-icon">1</div>
+                  <h3>Register</h3>
+                  <p>Create your profile with skills, location and contact details</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">2</div>
+                  <h3>Verify</h3>
+                  <p>Complete simple verification to build trust with employers</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">3</div>
+                  <h3>Find Jobs</h3>
+                  <p>Discover jobs near you that match your skills</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">4</div>
+                  <h3>Get Hired</h3>
+                  <p>Discuss terms directly with employers and start working</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section class="benefits" id="benefits">
+        <div class="container">
+          <h2 class="section-title">Benefits of ConnectLabour</h2>
+          
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <img src="src/assets/icon-verification.svg" alt="Verification icon" />
+              </div>
+              <h3>Verified Workers</h3>
+              <p>All workers undergo basic ID verification for your safety</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <img src="src/assets/icon-location.svg" alt="Location icon" />
+              </div>
+              <h3>Local Hiring</h3>
+              <p>Find workers in your neighborhood, reducing commute times</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <img src="src/assets/icon-payments.svg" alt="Payments icon" />
+              </div>
+              <h3>Fair Wages</h3>
+              <p>Transparent payment terms based on market rates</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <img src="src/assets/icon-categories.svg" alt="Categories icon" />
+              </div>
+              <h3>Multiple Categories</h3>
+              <p>From construction to housekeeping, all types of workers</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <img src="src/assets/icon-direct.svg" alt="Direct hiring icon" />
+              </div>
+              <h3>Direct Hiring</h3>
+              <p>No middlemen or commission fees, connect directly</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <img src="src/assets/icon-support.svg" alt="Support icon" />
+              </div>
+              <h3>Worker Support</h3>
+              <p>Access to rights information and skill development resources</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section class="categories">
+        <div class="container">
+          <h2 class="section-title">Worker Categories</h2>
+          
+          <div class="category-grid">
+            <div class="category-card" data-category="construction">
+              <img src="src/assets/category-construction.svg" alt="Construction workers" />
+              <h3>Construction</h3>
+            </div>
+            
+            <div class="category-card" data-category="domestic">
+              <img src="src/assets/category-domestic.svg" alt="Domestic help" />
+              <h3>Domestic Help</h3>
+            </div>
+            
+            <div class="category-card" data-category="driving">
+              <img src="src/assets/category-driving.svg" alt="Drivers" />
+              <h3>Drivers</h3>
+            </div>
+            
+            <div class="category-card" data-category="factory">
+              <img src="src/assets/category-factory.svg" alt="Factory workers" />
+              <h3>Factory Labor</h3>
+            </div>
+            
+            <div class="category-card" data-category="technicians">
+              <img src="src/assets/category-technicians.svg" alt="Technicians" />
+              <h3>Technicians</h3>
+            </div>
+            
+            <div class="category-card" data-category="more">
+              <img src="src/assets/category-more.svg" alt="More categories" />
+              <h3>More Categories</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials" id="testimonials">
+        <div class="container">
+          <h2 class="section-title">Success Stories</h2>
+          
+          <div class="testimonial-slider">
+            <div class="testimonial-slide active">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="src/assets/testimonial-1.jpg" alt="Rajesh, Carpenter" />
+                </div>
+                <div class="testimonial-text">
+                  <p>"I was standing at labor chowks for years hoping to find work. With ConnectLabour, I receive job notifications directly on my phone and have steady work now."</p>
+                  <h4>Rajesh Kumar</h4>
+                  <p class="testimonial-role">Carpenter, Delhi</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="src/assets/testimonial-2.jpg" alt="Priya, Homeowner" />
+                </div>
+                <div class="testimonial-text">
+                  <p>"Finding reliable domestic help was always a challenge. ConnectLabour made it simple to find verified workers living nearby. The transparency about rates is a bonus."</p>
+                  <h4>Priya Sharma</h4>
+                  <p class="testimonial-role">Homeowner, Bangalore</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="testimonial-image">
+                  <img src="src/assets/testimonial-3.jpg" alt="Ajay, Contractor" />
+                </div>
+                <div class="testimonial-text">
+                  <p>"As a small construction contractor, finding the right workers quickly is essential. This platform has transformed how I staff my projects."</p>
+                  <h4>Ajay Patel</h4>
+                  <p class="testimonial-role">Construction Contractor, Mumbai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-controls">
+            <button class="testimonial-btn prev" id="prevTestimonial">&lt;</button>
+            <div class="testimonial-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="testimonial-btn next" id="nextTestimonial">&gt;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to transform how you find work or workers?</h2>
+            <p>Join thousands of workers and employers already using ConnectLabour</p>
+            <div class="cta-buttons">
+              <button class="btn btn-primary btn-lg" id="ctaRegisterBtn">Register Now</button>
+              <button class="btn btn-outline btn-lg" id="ctaLearnBtn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <div class="logo">
+                <img src="src/assets/logo.svg" alt="ConnectLabour Logo" />
+                <h2>ConnectLabour</h2>
+              </div>
+              <p>Connecting workers and employers across India with a simple, fair platform.</p>
+            </div>
+            
+            <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="workers.html">For Workers</a></li>
+                <li><a href="employers.html">For Employers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: info@connectlabour.in</p>
+              <p>Phone: +91 9876543210</p>
+              <div class="social-links">
+                <a href="#" class="social-link">FB</a>
+                <a href="#" class="social-link">TW</a>
+                <a href="#" class="social-link">IG</a>
+                <a href="#" class="social-link">YT</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2025 ConnectLabour. All rights reserved.</p>
+            <div class="footer-legal">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Login Modal -->
+      <div class="modal" id="loginModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login to ConnectLabour</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginPhone">Phone Number</label>
+              <input type="tel" id="loginPhone" placeholder="Enter your mobile number" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required />
+            </div>
+            <div class="form-action">
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </div>
+            <p class="form-note">
+              Don't have an account? <a href="#" id="showRegisterModalBtn">Register</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div class="modal" id="registerModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Join ConnectLabour</h2>
+          
+          <div class="tabs">
+            <div class="tab-header">
+              <button class="tab-btn active" data-tab="worker-register">As Worker</button>
+              <button class="tab-btn" data-tab="employer-register">As Employer</button>
+            </div>
+            
+            <div class="tab-content active" id="worker-register-tab">
+              <form id="workerRegisterForm">
+                <div class="form-group">
+                  <label for="workerName">Full Name</label>
+                  <input type="text" id="workerName" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="workerPhone">Phone Number</label>
+                  <input type="tel" id="workerPhone" placeholder="Enter your mobile number" required />
+                </div>
+                <div class="form-group">
+                  <label for="workerCategory">Work Category</label>
+                  <select id="workerCategory" required>
+                    <option value="" disabled selected>Select your work category</option>
+                    <option value="construction">Construction</option>
+                    <option value="domestic">Domestic Help</option>
+                    <option value="driving">Driving</option>
+                    <option value="factory">Factory Work</option>
+                    <option value="technician">Technician</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workerLocation">City</label>
+                  <select id="workerLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workerPassword">Create Password</label>
+                  <input type="password" id="workerPassword" placeholder="Create a password" required />
+                </div>
+                <div class="form-action">
+                  <button type="submit" class="btn btn-primary btn-block">Register as Worker</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="tab-content" id="employer-register-tab">
+              <form id="employerRegisterForm">
+                <div class="form-group">
+                  <label for="employerName">Full Name</label>
+                  <input type="text" id="employerName" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="employerPhone">Phone Number</label>
+                  <input type="tel" id="employerPhone" placeholder="Enter your mobile number" required />
+                </div>
+                <div class="form-group">
+                  <label for="employerType">Employer Type</label>
+                  <select id="employerType" required>
+                    <option value="" disabled selected>Select employer type</option>
+                    <option value="individual">Individual/Household</option>
+                    <option value="business">Small Business</option>
+                    <option value="contractor">Contractor</option>
+                    <option value="company">Company</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employerLocation">City</label>
+                  <select id="employerLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employerPassword">Create Password</label>
+                  <input type="password" id="employerPassword" placeholder="Create a password" required />
+                </div>
+                <div class="form-action">
+                  <button type="submit" class="btn btn-primary btn-block">Register as Employer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <p class="form-note">
+            Already have an account? <a href="#" id="showLoginModalBtn">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <script src="src/scripts/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Workers - ConnectLabour</title>
+    <meta name="description" content="Hire verified daily wage workers near you with ConnectLabour" />
+    <meta name="author" content="ConnectLabour" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <a href="index.html">
+                <img src="src/assets/logo.svg" alt="ConnectLabour Logo" />
+                <h1>ConnectLabour</h1>
+              </a>
+            </div>
+            <div class="nav-links">
+              <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+              <a href="index.html#benefits" class="nav-link">Benefits</a>
+              <a href="index.html#testimonials" class="nav-link">Success Stories</a>
+            </div>
+            <div class="auth-buttons">
+              <button class="btn btn-login" id="loginBtn">Login</button>
+              <button class="btn btn-register" id="registerBtn">Register</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="page-hero employer-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Find Workers Near You</h1>
+            <p class="hero-subtitle">
+              Connect with verified daily wage workers in your area
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Post Job Section -->
+      <section class="post-job">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Post a Job</h2>
+            <p class="section-subtitle">Complete the form below to post your job requirement</p>
+          </div>
+          
+          <div class="job-form-container">
+            <form id="postJobForm" class="job-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="jobTitle">Job Title</label>
+                  <input type="text" id="jobTitle" placeholder="e.g. Construction Helper Needed" required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="jobCategory">Job Category</label>
+                  <select id="jobCategory" required>
+                    <option value="" disabled selected>Select job category</option>
+                    <option value="construction">Construction</option>
+                    <option value="domestic">Domestic Help</option>
+                    <option value="driving">Driving</option>
+                    <option value="factory">Factory Work</option>
+                    <option value="technician">Technician</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="jobLocation">Job Location</label>
+                  <input type="text" id="jobLocation" placeholder="e.g. Andheri, Mumbai" required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="jobType">Job Type</label>
+                  <select id="jobType" required>
+                    <option value="" disabled selected>Select job type</option>
+                    <option value="daily">Daily Wage</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="contract">Contract</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="workersNeeded">Number of Workers Needed</label>
+                  <input type="number" id="workersNeeded" min="1" placeholder="e.g. 5" required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="jobWage">Wage Offered</label>
+                  <div class="wage-input-group">
+                    <span class="wage-prefix">₹</span>
+                    <input type="number" id="jobWage" min="100" placeholder="e.g. 600" required />
+                    <select id="wageType">
+                      <option value="per-day">per day</option>
+                      <option value="per-hour">per hour</option>
+                      <option value="per-month">per month</option>
+                      <option value="fixed">fixed</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="jobDescription">Job Description</label>
+                <textarea id="jobDescription" rows="4" placeholder="Describe the job requirements, skills needed, and other details" required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="contactPhone">Contact Phone Number</label>
+                <input type="tel" id="contactPhone" placeholder="Enter phone number for workers to contact you" required />
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Post Job</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Worker Search Section -->
+      <section class="worker-search">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Find Workers</h2>
+            <p class="section-subtitle">Search for verified workers based on your requirements</p>
+          </div>
+          
+          <div class="search-filters">
+            <form id="workerSearchForm">
+              <div class="filter-row">
+                <div class="filter-group">
+                  <label for="workerCategory">Worker Category</label>
+                  <select id="workerCategory">
+                    <option value="all">All Categories</option>
+                    <option value="construction">Construction</option>
+                    <option value="domestic">Domestic Help</option>
+                    <option value="driving">Driving</option>
+                    <option value="factory">Factory Work</option>
+                    <option value="technician">Technician</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="filter-group">
+                  <label for="workerLocation">Location</label>
+                  <select id="workerLocation">
+                    <option value="all">All Locations</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                
+                <div class="filter-group">
+                  <label for="workerRating">Minimum Rating</label>
+                  <select id="workerRating">
+                    <option value="all">Any Rating</option>
+                    <option value="4">4★ & Above</option>
+                    <option value="3">3★ & Above</option>
+                    <option value="2">2★ & Above</option>
+                  </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Search Workers</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="worker-results">
+            <div class="worker-count">
+              <h3>Available Workers (15)</h3>
+            </div>
+            
+            <div class="worker-list">
+              <!-- Worker Listings will be dynamically added here -->
+              <div class="worker-card">
+                <div class="worker-header">
+                  <div class="worker-image">
+                    <img src="src/assets/worker-profile-1.jpg" alt="Ramesh K." />
+                    <span class="verification-badge" title="Identity Verified">✓</span>
+                  </div>
+                  <div class="worker-info">
+                    <h3 class="worker-name">Ramesh K.</h3>
+                    <p class="worker-category">Construction Worker</p>
+                    <div class="worker-rating">
+                      <span class="stars">★★★★☆</span>
+                      <span class="rating-count">(12 ratings)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-details">
+                  <p class="worker-location"><span class="icon">📍</span> Andheri, Mumbai</p>
+                  <p class="worker-exp"><span class="icon">⏱️</span> 5 years experience</p>
+                  <p class="worker-wage"><span class="icon">💰</span> ₹600 per day</p>
+                </div>
+                <div class="worker-skills">
+                  <span class="skill-tag">Masonry</span>
+                  <span class="skill-tag">Tiling</span>
+                  <span class="skill-tag">Plastering</span>
+                </div>
+                <div class="worker-actions">
+                  <button class="btn btn-primary btn-sm">Contact</button>
+                  <button class="btn btn-outline btn-sm">View Profile</button>
+                </div>
+              </div>
+              
+              <div class="worker-card">
+                <div class="worker-header">
+                  <div class="worker-image">
+                    <img src="src/assets/worker-profile-2.jpg" alt="Lakshmi P." />
+                    <span class="verification-badge" title="Identity Verified">✓</span>
+                  </div>
+                  <div class="worker-info">
+                    <h3 class="worker-name">Lakshmi P.</h3>
+                    <p class="worker-category">Domestic Help</p>
+                    <div class="worker-rating">
+                      <span class="stars">★★★★★</span>
+                      <span class="rating-count">(28 ratings)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-details">
+                  <p class="worker-location"><span class="icon">📍</span> Koramangala, Bangalore</p>
+                  <p class="worker-exp"><span class="icon">⏱️</span> 8 years experience</p>
+                  <p class="worker-wage"><span class="icon">💰</span> ₹15,000 per month</p>
+                </div>
+                <div class="worker-skills">
+                  <span class="skill-tag">Cooking</span>
+                  <span class="skill-tag">Cleaning</span>
+                  <span class="skill-tag">Child Care</span>
+                </div>
+                <div class="worker-actions">
+                  <button class="btn btn-primary btn-sm">Contact</button>
+                  <button class="btn btn-outline btn-sm">View Profile</button>
+                </div>
+              </div>
+              
+              <div class="worker-card">
+                <div class="worker-header">
+                  <div class="worker-image">
+                    <img src="src/assets/worker-profile-3.jpg" alt="Vijay S." />
+                    <span class="verification-badge" title="Identity Verified">✓</span>
+                  </div>
+                  <div class="worker-info">
+                    <h3 class="worker-name">Vijay S.</h3>
+                    <p class="worker-category">Driver</p>
+                    <div class="worker-rating">
+                      <span class="stars">★★★★☆</span>
+                      <span class="rating-count">(9 ratings)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-details">
+                  <p class="worker-location"><span class="icon">📍</span> Rohini, Delhi</p>
+                  <p class="worker-exp"><span class="icon">⏱️</span> 4 years experience</p>
+                  <p class="worker-wage"><span class="icon">💰</span> ₹18,000 per month</p>
+                </div>
+                <div class="worker-skills">
+                  <span class="skill-tag">Car</span>
+                  <span class="skill-tag">Bike</span>
+                  <span class="skill-tag">Commercial</span>
+                </div>
+                <div class="worker-actions">
+                  <button class="btn btn-primary btn-sm">Contact</button>
+                  <button class="btn btn-outline btn-sm">View Profile</button>
+                </div>
+              </div>
+              
+              <div class="worker-card">
+                <div class="worker-header">
+                  <div class="worker-image">
+                    <img src="src/assets/worker-profile-4.jpg" alt="Mahmood A." />
+                    <span class="verification-badge" title="Identity Verified">✓</span>
+                  </div>
+                  <div class="worker-info">
+                    <h3 class="worker-name">Mahmood A.</h3>
+                    <p class="worker-category">Electrician</p>
+                    <div class="worker-rating">
+                      <span class="stars">★★★★★</span>
+                      <span class="rating-count">(31 ratings)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-details">
+                  <p class="worker-location"><span class="icon">📍</span> Salt Lake, Kolkata</p>
+                  <p class="worker-exp"><span class="icon">⏱️</span> 10 years experience</p>
+                  <p class="worker-wage"><span class="icon">💰</span> ₹800 per day</p>
+                </div>
+                <div class="worker-skills">
+                  <span class="skill-tag">Wiring</span>
+                  <span class="skill-tag">Repair</span>
+                  <span class="skill-tag">Installation</span>
+                </div>
+                <div class="worker-actions">
+                  <button class="btn btn-primary btn-sm">Contact</button>
+                  <button class="btn btn-outline btn-sm">View Profile</button>
+                </div>
+              </div>
+              
+              <div class="load-more">
+                <button class="btn btn-outline">View More Workers</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Employer Resources Section -->
+      <section class="employer-resources">
+        <div class="container">
+          <h2 class="section-title">Resources for Employers</h2>
+          
+          <div class="resources-grid">
+            <div class="resource-card">
+              <img src="src/assets/legal-icon.svg" alt="Legal Compliance" />
+              <h3>Legal Compliance</h3>
+              <p>Learn about minimum wage requirements, working hours regulations, and hiring best practices.</p>
+              <a href="#" class="btn btn-outline btn-sm">Read Guide</a>
+            </div>
+            
+            <div class="resource-card">
+              <img src="src/assets/verification-icon.svg" alt="Worker Verification" />
+              <h3>Worker Verification</h3>
+              <p>Understand our verification process and additional checks you can request.</p>
+              <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+            
+            <div class="resource-card">
+              <img src="src/assets/payment-icon.svg" alt="Fair Payment" />
+              <h3>Fair Payment Practices</h3>
+              <p>Guidelines for setting fair wages and ensuring timely payments to workers.</p>
+              <a href="#" class="btn btn-outline btn-sm">View Guidelines</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to find workers for your requirements?</h2>
+            <p>Register now to post jobs and contact verified workers in your area</p>
+            <div class="cta-buttons">
+              <button class="btn btn-primary btn-lg" id="employerRegisterBtn">Register as Employer</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <div class="logo">
+                <img src="src/assets/logo.svg" alt="ConnectLabour Logo" />
+                <h2>ConnectLabour</h2>
+              </div>
+              <p>Connecting workers and employers across India with a simple, fair platform.</p>
+            </div>
+            
+            <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="index.html#testimonials">Success Stories</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="workers.html">For Workers</a></li>
+                <li><a href="employers.html">For Employers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: info@connectlabour.in</p>
+              <p>Phone: +91 9876543210</p>
+              <div class="social-links">
+                <a href="#" class="social-link">FB</a>
+                <a href="#" class="social-link">TW</a>
+                <a href="#" class="social-link">IG</a>
+                <a href="#" class="social-link">YT</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2025 ConnectLabour. All rights reserved.</p>
+            <div class="footer-legal">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Login Modal -->
+      <div class="modal" id="loginModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login to ConnectLabour</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginPhone">Phone Number</label>
+              <input type="tel" id="loginPhone" placeholder="Enter your mobile number" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required />
+            </div>
+            <div class="form-action">
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </div>
+            <p class="form-note">
+              Don't have an account? <a href="#" id="showRegisterModalBtn">Register</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div class="modal" id="registerModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Join ConnectLabour</h2>
+          
+          <div class="tabs">
+            <div class="tab-header">
+              <button class="tab-btn" data-tab="worker-register">As Worker</button>
+              <button class="tab-btn active" data-tab="employer-register">As Employer</button>
+            </div>
+            
+            <div class="tab-content" id="worker-register-tab">
+              <form id="workerRegisterForm">
+                <div class="form-group">
+                  <label for="workerName">Full Name</label>
+                  <input type="text" id="workerName" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="workerPhone">Phone Number</label>
+                  <input type="tel" id="workerPhone" placeholder="Enter your mobile number" required />
+                </div>
+                <div class="form-group">
+                  <label for="workerCategory">Work Category</label>
+                  <select id="workerCategory" required>
+                    <option value="" disabled selected>Select your work category</option>
+                    <option value="construction">Construction</option>
+                    <option value="domestic">Domestic Help</option>
+                    <option value="driving">Driving</option>
+                    <option value="factory">Factory Work</option>
+                    <option value="technician">Technician</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workerLocation">City</label>
+                  <select id="workerLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workerPassword">Create Password</label>
+                  <input type="password" id="workerPassword" placeholder="Create a password" required />
+                </div>
+                <div class="form-action">
+                  <button type="submit" class="btn btn-primary btn-block">Register as Worker</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="tab-content active" id="employer-register-tab">
+              <form id="employerRegisterForm">
+                <div class="form-group">
+                  <label for="employerName">Full Name</label>
+                  <input type="text" id="employerName" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="employerPhone">Phone Number</label>
+                  <input type="tel" id="employerPhone" placeholder="Enter your mobile number" required />
+                </div>
+                <div class="form-group">
+                  <label for="employerType">Employer Type</label>
+                  <select id="employerType" required>
+                    <option value="" disabled selected>Select employer type</option>
+                    <option value="individual">Individual/Household</option>
+                    <option value="business">Small Business</option>
+                    <option value="contractor">Contractor</option>
+                    <option value="company">Company</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employerLocation">City</label>
+                  <select id="employerLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employerPassword">Create Password</label>
+                  <input type="password" id="employerPassword" placeholder="Create a password" required />
+                </div>
+                <div class="form-action">
+                  <button type="submit" class="btn btn-primary btn-block">Register as Employer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <p class="form-note">
+            Already have an account? <a href="#" id="showLoginModalBtn">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/employers.js"></script>
+  </body>
+</html>

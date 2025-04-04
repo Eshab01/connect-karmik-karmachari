@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Jobs - ConnectLabour</title>
+    <meta name="description" content="Find daily wage jobs near you with ConnectLabour" />
+    <meta name="author" content="ConnectLabour" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <a href="index.html">
+                <img src="src/assets/logo.svg" alt="ConnectLabour Logo" />
+                <h1>ConnectLabour</h1>
+              </a>
+            </div>
+            <div class="nav-links">
+              <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+              <a href="index.html#benefits" class="nav-link">Benefits</a>
+              <a href="index.html#testimonials" class="nav-link">Success Stories</a>
+            </div>
+            <div class="auth-buttons">
+              <button class="btn btn-login" id="loginBtn">Login</button>
+              <button class="btn btn-register" id="registerBtn">Register</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="page-hero worker-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Find Jobs Near You</h1>
+            <p class="hero-subtitle">
+              Connect with employers looking for your skills in your area
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Job Search Section -->
+      <section class="job-search">
+        <div class="container">
+          <div class="search-filters">
+            <form id="jobSearchForm">
+              <div class="filter-row">
+                <div class="filter-group">
+                  <label for="jobCategory">Job Category</label>
+                  <select id="jobCategory">
+                    <option value="all">All Categories</option>
+                    <option value="construction">Construction</option>
+                    <option value="domestic">Domestic Help</option>
+                    <option value="driving">Driving</option>
+                    <option value="factory">Factory Work</option>
+                    <option value="technician">Technician</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="filter-group">
+                  <label for="jobLocation">Location</label>
+                  <select id="jobLocation">
+                    <option value="all">All Locations</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                
+                <div class="filter-group">
+                  <label for="jobType">Job Type</label>
+                  <select id="jobType">
+                    <option value="all">All Types</option>
+                    <option value="daily">Daily Wage</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="contract">Contract</option>
+                  </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Search Jobs</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="job-results">
+            <div class="job-count">
+              <h3>Available Jobs (12)</h3>
+            </div>
+            
+            <div class="job-list">
+              <!-- Job Listings will be dynamically added here -->
+              <div class="job-card">
+                <div class="job-header">
+                  <h3 class="job-title">Construction Helper Needed</h3>
+                  <span class="job-type daily">Daily Wage</span>
+                </div>
+                <div class="job-details">
+                  <p class="job-location"><span class="icon">📍</span> Andheri, Mumbai</p>
+                  <p class="job-category"><span class="icon">🔨</span> Construction</p>
+                  <p class="job-wage"><span class="icon">💰</span> ₹600 - ₹700 per day</p>
+                  <p class="job-posted"><span class="icon">⏱️</span> Posted 2 hours ago</p>
+                </div>
+                <div class="job-description">
+                  <p>Looking for 5 helpers for construction site. Need to carry materials and assist masons. Experience preferred but not required.</p>
+                </div>
+                <div class="job-actions">
+                  <button class="btn btn-primary btn-sm">Apply Now</button>
+                  <button class="btn btn-outline btn-sm">View Details</button>
+                </div>
+              </div>
+              
+              <div class="job-card">
+                <div class="job-header">
+                  <h3 class="job-title">Household Cook Required</h3>
+                  <span class="job-type full-time">Full Time</span>
+                </div>
+                <div class="job-details">
+                  <p class="job-location"><span class="icon">📍</span> Indira Nagar, Bangalore</p>
+                  <p class="job-category"><span class="icon">🔨</span> Domestic Help</p>
+                  <p class="job-wage"><span class="icon">💰</span> ₹12,000 - ₹15,000 per month</p>
+                  <p class="job-posted"><span class="icon">⏱️</span> Posted 1 day ago</p>
+                </div>
+                <div class="job-description">
+                  <p>Need an experienced cook for a family of four. Should know North Indian and South Indian cuisine. Accommodation can be provided.</p>
+                </div>
+                <div class="job-actions">
+                  <button class="btn btn-primary btn-sm">Apply Now</button>
+                  <button class="btn btn-outline btn-sm">View Details</button>
+                </div>
+              </div>
+              
+              <div class="job-card">
+                <div class="job-header">
+                  <h3 class="job-title">Delivery Driver with Bike</h3>
+                  <span class="job-type part-time">Part Time</span>
+                </div>
+                <div class="job-details">
+                  <p class="job-location"><span class="icon">📍</span> Connaught Place, Delhi</p>
+                  <p class="job-category"><span class="icon">🔨</span> Driving</p>
+                  <p class="job-wage"><span class="icon">💰</span> ₹150 per delivery + incentives</p>
+                  <p class="job-posted"><span class="icon">⏱️</span> Posted 5 hours ago</p>
+                </div>
+                <div class="job-description">
+                  <p>Looking for food delivery personnel with own bike. Flexible hours. Must have valid driving license and smartphone.</p>
+                </div>
+                <div class="job-actions">
+                  <button class="btn btn-primary btn-sm">Apply Now</button>
+                  <button class="btn btn-outline btn-sm">View Details</button>
+                </div>
+              </div>
+              
+              <div class="job-card">
+                <div class="job-header">
+                  <h3 class="job-title">Electrician for Office Wiring</h3>
+                  <span class="job-type contract">Contract</span>
+                </div>
+                <div class="job-details">
+                  <p class="job-location"><span class="icon">📍</span> Salt Lake, Kolkata</p>
+                  <p class="job-category"><span class="icon">🔨</span> Technician</p>
+                  <p class="job-wage"><span class="icon">💰</span> ₹800 per day (7-day project)</p>
+                  <p class="job-posted"><span class="icon">⏱️</span> Posted 3 days ago</p>
+                </div>
+                <div class="job-description">
+                  <p>Need experienced electrician for new office wiring. Should have knowledge of industrial wiring and fixtures. Tools will be provided.</p>
+                </div>
+                <div class="job-actions">
+                  <button class="btn btn-primary btn-sm">Apply Now</button>
+                  <button class="btn btn-outline btn-sm">View Details</button>
+                </div>
+              </div>
+              
+              <div class="load-more">
+                <button class="btn btn-outline">Load More Jobs</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Worker Resources Section -->
+      <section class="worker-resources">
+        <div class="container">
+          <h2 class="section-title">Resources for Workers</h2>
+          
+          <div class="resources-grid">
+            <div class="resource-card">
+              <img src="src/assets/rights-icon.svg" alt="Know Your Rights" />
+              <h3>Know Your Rights</h3>
+              <p>Learn about minimum wages, working hours, and other legal protections for workers.</p>
+              <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+            
+            <div class="resource-card">
+              <img src="src/assets/skills-icon.svg" alt="Skill Development" />
+              <h3>Skill Development</h3>
+              <p>Access free and low-cost training to improve your skills and earning potential.</p>
+              <a href="#" class="btn btn-outline btn-sm">Find Courses</a>
+            </div>
+            
+            <div class="resource-card">
+              <img src="src/assets/finance-icon.svg" alt="Financial Literacy" />
+              <h3>Financial Literacy</h3>
+              <p>Simple guides to saving, banking, and managing your earnings effectively.</p>
+              <a href="#" class="btn btn-outline btn-sm">Read Guides</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to find your next job?</h2>
+            <p>Register now to apply for jobs and get notifications about new opportunities</p>
+            <div class="cta-buttons">
+              <button class="btn btn-primary btn-lg" id="workerRegisterBtn">Register as Worker</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <div class="logo">
+                <img src="src/assets/logo.svg" alt="ConnectLabour Logo" />
+                <h2>ConnectLabour</h2>
+              </div>
+              <p>Connecting workers and employers across India with a simple, fair platform.</p>
+            </div>
+            
+            <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="index.html#testimonials">Success Stories</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="workers.html">For Workers</a></li>
+                <li><a href="employers.html">For Employers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: info@connectlabour.in</p>
+              <p>Phone: +91 9876543210</p>
+              <div class="social-links">
+                <a href="#" class="social-link">FB</a>
+                <a href="#" class="social-link">TW</a>
+                <a href="#" class="social-link">IG</a>
+                <a href="#" class="social-link">YT</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2025 ConnectLabour. All rights reserved.</p>
+            <div class="footer-legal">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Login Modal -->
+      <div class="modal" id="loginModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Login to ConnectLabour</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginPhone">Phone Number</label>
+              <input type="tel" id="loginPhone" placeholder="Enter your mobile number" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required />
+            </div>
+            <div class="form-action">
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </div>
+            <p class="form-note">
+              Don't have an account? <a href="#" id="showRegisterModalBtn">Register</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div class="modal" id="registerModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Join ConnectLabour</h2>
+          
+          <div class="tabs">
+            <div class="tab-header">
+              <button class="tab-btn active" data-tab="worker-register">As Worker</button>
+              <button class="tab-btn" data-tab="employer-register">As Employer</button>
+            </div>
+            
+            <div class="tab-content active" id="worker-register-tab">
+              <form id="workerRegisterForm">
+                <div class="form-group">
+                  <label for="workerName">Full Name</label>
+                  <input type="text" id="workerName" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="workerPhone">Phone Number</label>
+                  <input type="tel" id="workerPhone" placeholder="Enter your mobile number" required />
+                </div>
+                <div class="form-group">
+                  <label for="workerCategory">Work Category</label>
+                  <select id="workerCategory" required>
+                    <option value="" disabled selected>Select your work category</option>
+                    <option value="construction">Construction</option>
+                    <option value="domestic">Domestic Help</option>
+                    <option value="driving">Driving</option>
+                    <option value="factory">Factory Work</option>
+                    <option value="technician">Technician</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workerLocation">City</label>
+                  <select id="workerLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workerPassword">Create Password</label>
+                  <input type="password" id="workerPassword" placeholder="Create a password" required />
+                </div>
+                <div class="form-action">
+                  <button type="submit" class="btn btn-primary btn-block">Register as Worker</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="tab-content" id="employer-register-tab">
+              <form id="employerRegisterForm">
+                <div class="form-group">
+                  <label for="employerName">Full Name</label>
+                  <input type="text" id="employerName" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="employerPhone">Phone Number</label>
+                  <input type="tel" id="employerPhone" placeholder="Enter your mobile number" required />
+                </div>
+                <div class="form-group">
+                  <label for="employerType">Employer Type</label>
+                  <select id="employerType" required>
+                    <option value="" disabled selected>Select employer type</option>
+                    <option value="individual">Individual/Household</option>
+                    <option value="business">Small Business</option>
+                    <option value="contractor">Contractor</option>
+                    <option value="company">Company</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employerLocation">City</label>
+                  <select id="employerLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="pune">Pune</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="employerPassword">Create Password</label>
+                  <input type="password" id="employerPassword" placeholder="Create a password" required />
+                </div>
+                <div class="form-action">
+                  <button type="submit" class="btn btn-primary btn-block">Register as Employer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <p class="form-note">
+            Already have an account? <a href="#" id="showLoginModalBtn">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/workers.js"></script>
+  </body>
+</html>
