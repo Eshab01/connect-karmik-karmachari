@@ -13,11 +13,11 @@ const CategoryCard = ({ name, icon, onClick }: CategoryCardProps) => {
   
   return (
     <div 
-      className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow cursor-pointer"
+      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 active:bg-gray-200 transition-all cursor-pointer touch-manipulation"
       onClick={onClick}
     >
-      <img src={icon} alt={name} className="h-12 mx-auto mb-2" />
-      <p className={`font-medium ${isSmallMobile ? "text-sm" : "text-base"}`}>{name}</p>
+      <img src={icon} alt={name} className="h-10 mx-auto mb-1" />
+      <p className={`font-medium ${isSmallMobile ? "text-xs" : "text-sm"}`}>{name}</p>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from "react";
 
-// Breakpoints for different device types
-const MOBILE_BREAKPOINT = 768;
-const SMALL_MOBILE_BREAKPOINT = 360;
+// Mobile breakpoints for different device sizes
+const MOBILE_BREAKPOINT = 768; // Standard mobile breakpoint
+const SMALL_MOBILE_BREAKPOINT = 360; // Small mobile devices
+const MOBILE_FRAME_WIDTH = 414; // iPhone 11 Pro Max / 6.5 inch equivalent
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -47,4 +48,15 @@ export function useIsSmallMobile() {
   }, []);
 
   return isSmallMobile;
+}
+
+export function useMobileFrame() {
+  const [isInMobileFrame, setIsInMobileFrame] = useState<boolean>(true);
+  
+  useEffect(() => {
+    // Always true - we'll always show the mobile frame
+    setIsInMobileFrame(true);
+  }, []);
+  
+  return isInMobileFrame;
 }
